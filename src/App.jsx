@@ -4,7 +4,9 @@ function App() {
   return (
     <>
     <div>
-      Filler
+      <input>
+      
+      </input>
     </div>
     <Header />
     </>
