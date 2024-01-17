@@ -1,25 +1,15 @@
 import Header from "./header";
 import Aside from "./aside";
 import DisplayAllStudents from "./main";
-
-
-
+import { StudentShow } from "./StudentShow";
 
 function App() {
   return (
     <div>
-      <div>
-        <Header />
-      </div>
-      <div className="Dashboard">
-      <main>
-        <DisplayAllStudents />
-      </main>
-      <div className="Cohort-listing">
-        <Aside />
-      </div>
-
-       </div>
+      <Header />
+      <DisplayAllStudents />
+      <Aside />
+      <StudentShow />
     </div>
   );
 }
