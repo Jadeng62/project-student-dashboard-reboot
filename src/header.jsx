@@ -1,6 +1,7 @@
-import "./header.css";
+import React from "react";
+import "./Header.css";
 
-function Header() {
+export const Header = () => {
   return (
     <header className="header">
       <h1> Student Dashboard</h1>
@@ -11,6 +12,4 @@ function Header() {
       </span>
     </header>
   );
-}
-
-export default Header;
+};

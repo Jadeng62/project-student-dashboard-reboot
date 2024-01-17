@@ -1,12 +1,6 @@
-function Aside() {
-    return (
-        <aside>
-            <h2>Select Semester</h2>
-            <ul>
-                <li className="cohort-selector">Cohohort List</li>
-            </ul>
-        </aside>
-    )
-}
+import React from "react";
+import "./Aside.css";
 
-export default Aside
+export const Aside = () => {
+  return <div>Aside</div>;
+};
