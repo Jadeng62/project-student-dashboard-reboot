@@ -1,10 +1,19 @@
+
+import Header from "./header";
+
+
 function App() {
   return (
+    <>
     <div>
+
+      <input>
+  
+      </input>
       <h1>Student Dashboard</h1>
-      crd-2
-      <p>Carlitos was here the second time</p>
     </div>
+    <Header />
+    </>
   );
 }
 
