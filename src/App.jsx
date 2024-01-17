@@ -8,10 +8,13 @@ import { StudentShow } from "./StudentShow";
 function App() {
   return (
     <div>
+      <Header />
+      <Aside />
       <Routes>
-        <Route path="/" element={<Header />} />
-        <Route path="/Aside" element={<Aside />} />
-        <Route path="/StudentView" element={<StudentShow />} />
+        <Route path="/" element= {<CardListing />}/>
+        {/* Make an about.jsx component */}
+        {/* <Route path="/about" element= {<About />}/> */}
+        <Route path= "/student/:id" element={<StudentShow />} />
       </Routes>
     </div>
   );
