@@ -1,0 +1,23 @@
+
+
+/* .Dashboard {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    
+} */
+
+
+
+.Cohort-listing {
+    border: 5px solid rgba(29, 212, 38, 0.711);
+    position: absolute;
+    text-align: center;
+    margin-right: 10em;
+    right: inherit;
+   
+   
+}
+
+.cohort-selector {
+    
+}
