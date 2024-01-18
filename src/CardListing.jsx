@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./CardListing.css";
-// import { getAllStudents } from "./data/fetch";
 import { Card } from "./Card";
 
 const URL = "http://localhost:5001/api/students";
