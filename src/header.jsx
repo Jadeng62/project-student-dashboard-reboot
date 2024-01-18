@@ -8,6 +8,7 @@ export const Header = () => {
     <div className=" mx-2 my-2">
       <div className="flex flex-row p-5 rounded-lg bg-red-500">
         <Link to="/">
+          <img src="" alt="" />
           <h1 className=" text-5xl font-semibold text-white">
             Student Dashboard
           </h1>
