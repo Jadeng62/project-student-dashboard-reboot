@@ -1,6 +1,6 @@
 import { Header } from "./Header";
 import { CardListing } from "./CardListing";
-import { Aside } from "./Aside";
+import { Aside } from "./aside";
 import { Route, Routes } from "react-router-dom";
 import { StudentShow } from "./StudentShow";
 
@@ -20,3 +20,5 @@ function App() {
 }
 
 export default App;
+
+
