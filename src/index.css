@@ -1,4 +1,8 @@
+/* Tailwind directives used to include base styles, component styles and utility styles */
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* .Dashboard {
     display: grid;
@@ -6,18 +10,13 @@
     
 } */
 
-
-
 .Cohort-listing {
-    border: 5px solid rgba(29, 212, 38, 0.711);
-    position: absolute;
-    text-align: center;
-    margin-right: 10em;
-    right: inherit;
-   
-   
+  border: 5px solid rgba(29, 212, 38, 0.711);
+  position: absolute;
+  text-align: center;
+  margin-right: 10em;
+  right: inherit;
 }
 
 .cohort-selector {
-    
 }
