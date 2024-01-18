@@ -1,7 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./Card.css";
 
 export const Card = ({ student }) => {
+  const [track, setTrack] = useState(false);
+
+  function graduationTrack() {
+    if (
+      student.certifications.resume &&
+      student.certifications.linkedin &&
+      student.certifications.github &&
+      student.certifications.mockInterview
+    ) {
+      setTrack(true);
+    }
+  }
+
+  useEffect(() => {
+    graduationTrack();
+  }, []);
+
   const birthMonths = {
     1: "January",
     2: "February",
@@ -27,15 +45,18 @@ export const Card = ({ student }) => {
         <img src={student.profilePhoto} alt="" />
       </div>
       <div>
-        <h3>
-          {student.names.preferredName} {student.names.middleName}{" "}
-          {student.names.surname}
-        </h3>
+        <Link to={`/student/${student.id}`}>
+          <h3>
+            {student.names.preferredName} {student.names.middleName}{" "}
+            {student.names.surname}
+          </h3>
+        </Link>
         <p>{student.username}</p>
         <p>
           <span>Birthday: </span>
           {`${monthName} ${day}, ${year}`}
         </p>
+        {track && <span>On track to graduate</span>}
       </div>
     </div>
   );
