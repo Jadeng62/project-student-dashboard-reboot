@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { MdSchool } from "react-icons/md";
+import { RiTeamFill } from "react-icons/ri";
 
 import "./Header.css";
 
@@ -10,6 +12,7 @@ export const Header = () => {
         <Link to="/">
           <img src="" alt="" />
           <h1 className=" text-5xl font-semibold text-white">
+            <MdSchool />
             Student Dashboard
           </h1>
         </Link>
@@ -25,7 +28,7 @@ export const Header = () => {
             type="button"
             className=" mx-1 px-2 rounded-full bg-black text-white hover:bg-green-200"
           >
-            About the Devs
+            <RiTeamFill className="" />
           </button>
         </span>
       </div>
