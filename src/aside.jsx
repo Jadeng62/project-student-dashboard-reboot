@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
 import "./aside.css";
 
-
-const URL = "http://localhost:5001/api/students"
-
+const URL = "http://localhost:5001/api/students";
 
 
 export const Aside = ({displayStudentTerm}) => {
@@ -54,6 +52,8 @@ export const Aside = ({displayStudentTerm}) => {
 
 
 
+  const filteredSemester = () => {};
+
 
       
       
@@ -71,5 +71,6 @@ export const Aside = ({displayStudentTerm}) => {
         <li key={index} className="term" onClick={() => displayStudentTerm(code)}>{code}</li>
        ))}
       </ul>
-      </div>
+    </div>
+  );
 };
