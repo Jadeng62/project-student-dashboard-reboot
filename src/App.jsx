@@ -56,7 +56,7 @@ function App() {
             <>
               {" "}
               <CardListing selectStudents={selectStudents} />{" "}
-              <Aside displayStudentTerm={displayStudentTerm} />{" "}
+              {/* <Aside displayStudentTerm={displayStudentTerm} />{" "} */}
             </>
           }
         />
@@ -69,7 +69,7 @@ function App() {
             <>
               {" "}
               <StudentShow students={selectStudents} />{" "}
-              <Aside displayStudentTerm={displayStudentTerm} />{" "}
+              {/* <Aside displayStudentTerm={displayStudentTerm} />{" "} */}
             </>
           }
         />
