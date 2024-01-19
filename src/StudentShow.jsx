@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { birthdayFormat } from "./data/helper";
+import { CertificationsTable } from "./CertificationsTable";
 
 export const StudentShow = ({ students }) => {
   const { id } = useParams();
@@ -24,15 +25,7 @@ export const StudentShow = ({ students }) => {
         <span>Birthday: </span>
         {birthdayFormat(selectedStudent)}
       </h3>
-      <table>
-        <thead>
-          <tr>
-            <th>CodeWars</th>
-            <th>Scores</th>
-            <th>Certifications</th>
-          </tr>
-        </thead>
-      </table>
+      <CertificationsTable selectedStudent={selectedStudent} />
     </div>
   );
 };
