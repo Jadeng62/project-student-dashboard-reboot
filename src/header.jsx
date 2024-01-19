@@ -4,7 +4,11 @@ import { MdSchool } from "react-icons/md";
 import { RiTeamFill } from "react-icons/ri";
 import { LuSunMoon } from "react-icons/lu";
 
-export const Header = () => {
+export const Header = ({
+  asideInvisible,
+  setAsideInvisible,
+  handleVisibility,
+}) => {
   return (
     <div className=" mx-2 my-2">
       <div className="flex flex-row p-5 rounded-lg bg-red-500">
@@ -24,13 +28,16 @@ export const Header = () => {
             {/* Light Dark Toggle */}
             <LuSunMoon />
           </button>
-          <button
-            type="button"
-            className=" mx-1 px-3 py-3 rounded-full bg-black text-white hover:bg-green-200"
-          >
-            {/* About the Devs  */}
-            <RiTeamFill className="" />
-          </button>
+          <Link to={`/aboutthedevs`}>
+            <button
+              type="button"
+              className=" mx-1 px-3 py-3 rounded-full bg-black text-white hover:bg-green-200"
+              onClick={handleVisibility}
+            >
+              {/* About the Devs  */}
+              <RiTeamFill className="" />
+            </button>
+          </Link>
         </span>
       </div>
     </div>

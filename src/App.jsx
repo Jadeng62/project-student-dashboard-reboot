@@ -1,9 +1,9 @@
 import { Header } from "./Header";
 import { CardListing } from "./CardListing";
 import { Aside } from "./aside";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import { StudentShow } from "./StudentShow";
-
+import { AboutTheDevs } from "./AboutTheDevs";
 import { useEffect, useState } from "react";
 
 function App() {
@@ -11,6 +11,9 @@ function App() {
 
   const [allStudents, setAllStudents] = useState([]);
   const [selectStudents, setSelectStudents] = useState([]);
+  const [asideInvisible, setAsideInvisible] = useState(false);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch(URL)
@@ -30,23 +33,47 @@ function App() {
 
     setSelectStudents(studentTerms);
   };
-  console.log("selectstudents", selectStudents);
+
+  const handleVisibility = () => {
+    setAsideInvisible(!asideInvisible);
+  };
+
+  // console.log("selectstudents", selectStudents);
   return (
     <div>
-      <Header />
-      <Aside displayStudentTerm={displayStudentTerm} />
+      <Header
+        asideInvisible={asideInvisible}
+        setAsideInvisible={setAsideInvisible}
+        handleVisibility={handleVisibility}
+      />
+      {!asideInvisible ? (
+        <Aside displayStudentTerm={displayStudentTerm} />
+      ) : null}
       <Routes>
         <Route
           path="/"
-          element={<CardListing selectStudents={selectStudents} />}
+          element={
+            <>
+              {" "}
+              <CardListing selectStudents={selectStudents} />{" "}
+              <Aside displayStudentTerm={displayStudentTerm} />{" "}
+            </>
+          }
         />
 
         {/* Make an about.jsx component */}
         {/* <Route path="/about" element= {<About />}/> */}
         <Route
           path="/student/:id"
-          element={<StudentShow students={selectStudents} />}
+          element={
+            <>
+              {" "}
+              <StudentShow students={selectStudents} />{" "}
+              <Aside displayStudentTerm={displayStudentTerm} />{" "}
+            </>
+          }
         />
+        <Route path="/aboutthedevs" element={<AboutTheDevs />} />
       </Routes>
     </div>
   );
