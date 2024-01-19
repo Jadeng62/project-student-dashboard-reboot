@@ -5,6 +5,30 @@ import { Route, Routes } from "react-router-dom";
 import { StudentShow } from "./StudentShow";
 
 function App() {
+  const URL = "http://localhost:5001/api/students";
+
+  const [allStudents, setAllStudents] = useState([]);
+  const [selectStudents, setSelectStudents] = useState([]);
+
+  useEffect(() => {
+    fetch(URL)
+      .then((res) => res.json())
+      .then((data) => {
+        setSelectStudents(data);
+
+        setAllStudents(data);
+      })
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
+
+  const displayStudentTerm = (code) => {
+    const studentTerms = allStudents.filter(
+      (student) => student.cohort.cohortCode === code
+    );
+
+    setSelectStudents(studentTerms);
+  };
+
   return (
     <div>
       <Header />

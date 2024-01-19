@@ -1,25 +1,14 @@
 import React, { useState } from "react";
 import "./Card.css";
+import { birthdayFormat, graduationTrack } from "./data/helper";
 
 export const Card = ({ student }) => {
-  const birthMonths = {
-    1: "January",
-    2: "February",
-    3: "March",
-    4: "April",
-    5: "May",
-    6: "June",
-    7: "July",
-    8: "August",
-    9: "September",
-    10: "October",
-    11: "November",
-    12: "December",
-  };
+  const [track, setTrack] = useState(false);
 
-  const [month, day, year] = student.dob.split("/");
+  useEffect(() => {
+    setTrack(graduationTrack(student));
+  }, [student]);
 
-  const monthName = birthMonths[parseInt(month)];
 
   return (
     <div className="student-card">
@@ -34,7 +23,7 @@ export const Card = ({ student }) => {
         <p>{student.username}</p>
         <p>
           <span>Birthday: </span>
-          {`${monthName} ${day}, ${year}`}
+          {birthdayFormat(student)}
         </p>
       </div>
     </div>
