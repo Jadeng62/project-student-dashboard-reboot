@@ -1,0 +1,55 @@
+import { Header } from "./Header";
+import { CardListing } from "./CardListing";
+import { Aside } from "./aside";
+import { Route, Routes } from "react-router-dom";
+import { StudentShow } from "./StudentShow";
+
+import { useEffect, useState } from "react";
+
+function App() {
+  const URL = "http://localhost:5001/api/students";
+
+  const [allStudents, setAllStudents] = useState([]);
+  const [selectStudents, setSelectStudents] = useState([]);
+
+  useEffect(() => {
+    fetch(URL)
+      .then((res) => res.json())
+      .then((data) => {
+        setSelectStudents(data);
+
+        setAllStudents(data);
+      })
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
+
+  const displayStudentTerm = (code) => {
+    const studentTerms = allStudents.filter(
+      (student) => student.cohort.cohortCode === code
+    );
+
+    setSelectStudents(studentTerms);
+  };
+  console.log("selectstudents", selectStudents);
+  return (
+    <div>
+      <Header />
+      <Aside displayStudentTerm={displayStudentTerm} />
+      <Routes>
+        <Route
+          path="/"
+          element={<CardListing selectStudents={selectStudents} />}
+        />
+
+        {/* Make an about.jsx component */}
+        {/* <Route path="/about" element= {<About />}/> */}
+        <Route
+          path="/student/:id"
+          element={<StudentShow students={selectStudents} />}
+        />
+      </Routes>
+    </div>
+  );
+}
+
+export default App;
