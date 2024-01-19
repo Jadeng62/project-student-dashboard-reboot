@@ -4,8 +4,6 @@ import { MdSchool } from "react-icons/md";
 import { RiTeamFill } from "react-icons/ri";
 import { LuSunMoon } from "react-icons/lu";
 
-import "./Header.css";
-
 export const Header = () => {
   return (
     <div className=" mx-2 my-2">

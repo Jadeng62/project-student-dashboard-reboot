@@ -3,8 +3,7 @@ import { CardListing } from "./CardListing";
 import { Aside } from "./aside";
 import { Route, Routes } from "react-router-dom";
 import { StudentShow } from "./StudentShow";
-
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function App() {
   const URL = "http://localhost:5001/api/students";
@@ -30,23 +29,16 @@ function App() {
 
     setSelectStudents(studentTerms);
   };
-  console.log("selectstudents", selectStudents);
+
   return (
     <div>
       <Header />
-      <Aside displayStudentTerm={displayStudentTerm} />
+      <Aside />
       <Routes>
-        <Route
-          path="/"
-          element={<CardListing selectStudents={selectStudents} />}
-        />
-
+        <Route path="/" element={<CardListing />} />
         {/* Make an about.jsx component */}
         {/* <Route path="/about" element= {<About />}/> */}
-        <Route
-          path="/student/:id"
-          element={<StudentShow students={selectStudents} />}
-        />
+        <Route path="/student/:id" element={<StudentShow />} />
       </Routes>
     </div>
   );
