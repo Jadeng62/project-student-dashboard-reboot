@@ -55,6 +55,7 @@ export const Aside = ({ displayStudentTerm }) => {
             {code}
           </li>
         ))}
+        <button onClick className=" p-3 border border-red-200 ">All Semesters</button>
       </ul>
     </div>
   );
