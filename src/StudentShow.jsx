@@ -6,6 +6,10 @@ export const StudentShow = ({ students }) => {
   const { id } = useParams();
   const selectedStudent = students.find((student) => student.id === id);
 
+  if (!selectedStudent) {
+    return <div>Student not found</div>;
+  }
+
   return (
     <div>
       <div>
@@ -20,6 +24,15 @@ export const StudentShow = ({ students }) => {
         <span>Birthday: </span>
         {birthdayFormat(selectedStudent)}
       </h3>
+      <table>
+        <thead>
+          <tr>
+            <th>CodeWars</th>
+            <th>Scores</th>
+            <th>Certifications</th>
+          </tr>
+        </thead>
+      </table>
     </div>
   );
 };
