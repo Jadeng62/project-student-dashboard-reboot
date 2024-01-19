@@ -30,7 +30,7 @@ function App() {
 
     setSelectStudents(studentTerms);
   };
-  console.log("selectstudents", selectStudents);
+  // console.log("selectstudents", selectStudents);
   return (
     <div>
       <Header />
