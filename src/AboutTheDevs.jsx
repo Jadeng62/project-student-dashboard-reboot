@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export const AboutTheDevs = () => {
   return (
     <>
-      <div className="mx-2">
+      <div className="mx-6">
         <h1 className="p-10 text-3xl text-center font-semibold bg-zinc-200">
           About the Developers
         </h1>
