@@ -13,7 +13,7 @@ export const AboutTheDevs = () => {
         <h1 className="p-10 text-3xl text-center font-semibold bg-zinc-100">
           About the Developers
         </h1>
-        <div className="p-5 rounded-bl-xl rounded-br-xl flex justify-between bg-zinc-200">
+        <div className="p-5 rounded-bl-xl rounded-br-xl flex flex-wrap justify-between bg-zinc-200">
           <div className="mx-2 my-2 p-5 flex-1 flex flex-col items-center rounded-lg bg-white">
             <VscAccount className="text-9xl" />
             <div className="m-4 border border-white">
@@ -26,13 +26,13 @@ export const AboutTheDevs = () => {
               Stay Connected
               <MdKeyboardDoubleArrowRight className="text-3xl" />
             </div>
-            <div className="flex flex-row gap-10">
+            <div className="flex flex-row gap-10 my-4">
               <FaLinkedin className="text-6xl text-blue-500" />
               <BsGithub className="text-6xl" />
               <MdAlternateEmail className="text-6xl text-red-500" />
             </div>
           </div>
-          <div className="mx-2 my-2 p-5 flex-1 flex flex-col items-center rounded-lg bg-white">
+          <div className=" mx-2 my-2 p-5 flex-1 flex flex-col items-center rounded-lg bg-white">
             <VscAccount className="text-9xl" />
             <div className="m-4 border border-white">
               ___ is a Software Developer who specializes in ___. They are
@@ -44,13 +44,13 @@ export const AboutTheDevs = () => {
               Stay Connected
               <MdKeyboardDoubleArrowRight className="text-3xl" />
             </div>
-            <div className="flex flex-row gap-10">
+            <div className="flex flex-row gap-10 my-4">
               <FaLinkedin className="text-6xl text-blue-500" />
               <BsGithub className="text-6xl" />
               <MdAlternateEmail className="text-6xl text-red-500" />
             </div>
           </div>
-          <div className="mx-2 my-2 p-5 flex-1 flex flex-col items-center rounded-lg bg-white">
+          <div className=" mx-2 my-2 p-5 flex-1 flex flex-col items-center rounded-lg bg-white">
             <VscAccount className="text-9xl" />
             <div className="m-4 border border-white">
               ___ is a Software Developer who specializes in ___. They are
@@ -62,7 +62,7 @@ export const AboutTheDevs = () => {
               Stay Connected
               <MdKeyboardDoubleArrowRight className="text-3xl" />
             </div>
-            <div className="flex flex-row gap-10">
+            <div className="flex flex-row gap-10 my-4">
               <FaLinkedin className="text-6xl text-blue-500" />
               <BsGithub className="text-6xl" />
               <MdAlternateEmail className="text-6xl text-red-500" />
