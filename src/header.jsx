@@ -11,7 +11,7 @@ export const Header = ({
 }) => {
   return (
     <div className=" mx-2 pt-2">
-      <div className="flex flex-row p-5 rounded-tl-lg rounded-tr-lg bg-red-500">
+      <div className="flex flex-row p-5 rounded-tl-xl rounded-tr-xl bg-red-500">
         <Link to="/">
           <h1 className=" text-5xl font-semibold text-white">
             <MdSchool />
