@@ -13,7 +13,7 @@ export const AboutTheDevs = () => {
         <h1 className="p-10 text-3xl text-center font-semibold bg-zinc-100">
           About the Developers
         </h1>
-        <div className="p-5 rounded-bl-xl rounded-br-xl flex flex-wrap justify-between bg-zinc-200">
+        <div className="p-5 flex flex-wrap justify-between bg-zinc-200">
           <div className="mx-2 my-2 p-5 flex-1 flex flex-col items-center rounded-lg bg-white">
             <VscAccount className="text-9xl" />
             <div className="m-4 border border-white">
