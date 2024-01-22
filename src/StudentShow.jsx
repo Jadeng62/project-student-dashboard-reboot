@@ -6,11 +6,16 @@ import { NotesSection } from "./NotesSection";
 
 export const StudentShow = ({ students }) => {
   const { id } = useParams();
+  const [track, setTrack] = useState(false);
   const selectedStudent = students.find((student) => student.id === id);
 
   if (!selectedStudent) {
     return <div>Student not found</div>;
   }
+
+  useEffect(() => {
+    setTrack(graduationTrack(selectedStudent));
+  }, [selectedStudent]);
 
   return (
     <div className="max-w-4xl grid auto-rows-auto border-4 border-black">
@@ -34,10 +39,12 @@ export const StudentShow = ({ students }) => {
           </h3>
         </div>
         {/* Have to come back and use track here */}
-        <div>
-          <h3 className="text-green-500 font-bold text-lg text-right pr-10">
-            PlaceHolder for Grad
-          </h3>
+        <div className="text-right">
+          {track && (
+            <span className="text-green-500 font-bold text-lg pr-10">
+              On track to graduate
+            </span>
+          )}
         </div>
       </div>
 
