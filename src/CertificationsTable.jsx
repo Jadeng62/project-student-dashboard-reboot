@@ -2,26 +2,28 @@ import React from "react";
 
 export const CertificationsTable = ({ selectedStudent }) => {
   return (
-    <table className=" bg-white border border-gray-300">
+    <table className=" bg-white border-8 border-black">
       <thead>
-        <tr>
-          <th>CodeWars</th>
-          <th>Scores</th>
-          <th>Certifications</th>
+        <tr className="text-lg grid grid-cols-3">
+          <th className="py-5 text-red-500">CodeWars</th>
+          <th className="py-5 text-orange-500">Scores</th>
+          <th className="py-5 text-blue-600">Certifications</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>
-            <div>
-              <p>
+        <tr className="grid grid-cols-3">
+          <td className="text-center">
+            <div className="px-10">
+              <p className="pb-5">
                 Current Total: {selectedStudent.codewars.current.total} points
               </p>
-              <p>
+              <p className="pb-5">
                 Last Week: {selectedStudent.codewars.current.lastWeek} points
               </p>
-              <p>Goal: {selectedStudent.codewars.goal.total} points</p>
-              <p>
+              <p className="pb-5">
+                Goal: {selectedStudent.codewars.goal.total} points
+              </p>
+              <p className="pb-5">
                 Percent of Goal Achieved:{" "}
                 {(
                   (selectedStudent.codewars.current.total /
@@ -32,32 +34,34 @@ export const CertificationsTable = ({ selectedStudent }) => {
               </p>
             </div>
           </td>
-          <td>
-            <div>
-              <p>
+          <td className="text-center">
+            <div className="px-10">
+              <p className="pb-5">
                 Assignments:
                 {selectedStudent.cohort.scores.assignments * 100}%
               </p>
-              <p>Projects:{selectedStudent.cohort.scores.projects * 100}%</p>
-              <p>
+              <p className="pb-5">
+                Projects:{selectedStudent.cohort.scores.projects * 100}%
+              </p>
+              <p className="pb-5">
                 Assessments:{selectedStudent.cohort.scores.assessments * 100}%
               </p>
             </div>
           </td>
-          <td>
-            <div>
-              <p>
+          <td className="text-center">
+            <div className="px-10">
+              <p className="pb-5 ">
                 Resume: {selectedStudent.certifications.resume ? "🟢" : "🔴"}
               </p>
-              <p>
+              <p className="pb-5 ">
                 LinkedIn:{" "}
                 {selectedStudent.certifications.linkedin ? "🟢" : "🔴"}
               </p>
-              <p>
+              <p className="pb-5 ">
                 Mock Interview:{" "}
                 {selectedStudent.certifications.mockInterview ? "🟢" : "🔴"}
               </p>
-              <p>
+              <p className="pb-5">
                 Github: {selectedStudent.certifications.github ? "🟢" : "🔴"}
               </p>
             </div>

@@ -5,6 +5,7 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 import { StudentShow } from "./StudentShow";
 import { AboutTheDevs } from "./AboutTheDevs";
 import { useEffect, useState } from "react";
+import { graduationTrack } from "./data/helper";
 
 function App() {
   const URL = "http://localhost:5001/api/students";

@@ -9,11 +9,17 @@ export const CardListing = ({ selectStudents, selectedSemester}) => {
   
   return (
     <div>
-      <h2>{selectedSemester}</h2>
-      <h2>Total Fellows: {selectStudents.length} Fellows</h2>
-      {selectStudents.map((student) => {
-        return <Card key={student.id} student={student} />;
-      })}
+      <h2 className="text-3xl">{selectedSemester}</h2>
+      <h2 className="text-3xl">
+        Total Fellows:{selectStudents.length}
+        <span className="text-red-500 font-bold">{selectStudents.length}</span>{" "}
+        Fellows
+      </h2>
+      <div className="grid grid-cols-1">
+        {selectStudents.map((student) => {
+          return <Card key={student.id} student={student} />;
+        })}
+      </div>
     </div>
   );
 };
