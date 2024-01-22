@@ -46,7 +46,7 @@ export const Aside = ({ displayStudentTerm }) => {
   //     let year = splitResult[2];
 
   return (
-    <div className="space-x-1 text-center  border border-blue-500">
+    <div className="space-x-1 text-center  border border-blue-500 bg-zinc-200 mx-0">
       <h1>Semester :</h1>
       <select onChange={handleSortChange}>
         <option>--Please Select--</option>
@@ -55,7 +55,7 @@ export const Aside = ({ displayStudentTerm }) => {
       </select>
       <br />
       <ul>
-        {console.log(eachSemester)}
+        {/* {console.log(eachSemester)} */}
         {eachSemester.map((code, index) => (
           <li
             key={index}

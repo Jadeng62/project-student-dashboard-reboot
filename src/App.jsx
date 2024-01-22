@@ -49,14 +49,14 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="mx-6">
       <Header
         asideInvisible={asideInvisible}
         setAsideInvisible={setAsideInvisible}
         handleVisibility={handleVisibility}
       />
       <div className="flex flex-row flex-wrap">
-        <div className="w-full lg:w-1/4 p-4">
+        <div className="w-full lg:w-1/4 p-4 order-2">
           {!asideInvisible ? (
             <Aside displayStudentTerm={displayStudentTerm} />
           ) : null}

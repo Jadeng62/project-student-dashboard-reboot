@@ -9,7 +9,7 @@ import { MdAlternateEmail } from "react-icons/md";
 export const AboutTheDevs = () => {
   return (
     <>
-      <div className="mx-6">
+      <div className="">
         <h1 className="p-10 text-3xl text-center font-semibold bg-zinc-100">
           About the Developers
         </h1>
