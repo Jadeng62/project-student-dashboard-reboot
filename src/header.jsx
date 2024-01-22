@@ -18,7 +18,7 @@ export const Header = ({
             Student Dashboard
           </h1>
         </Link>
-        <span className="flex flex-auto mt-12 mr-14 py-4 pr-1 justify-end ml-20 pl-10 ">
+        <div className="flex flex-auto mt-12 mr-14 py-4 pr-1 justify-end ml-20 pl-10 ">
           {/* this theme will become a toggle button that will show sun/moon */}
           <button
             type="button"
@@ -37,7 +37,7 @@ export const Header = ({
               <RiTeamFill className="text-2xl" />
             </button>
           </Link>
-        </span>
+        </div>
       </div>
     </div>
   );
