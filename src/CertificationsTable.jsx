@@ -2,7 +2,7 @@ import React from "react";
 
 export const CertificationsTable = ({ selectedStudent }) => {
   return (
-    <table className=" bg-white border-8 border-gray-300">
+    <table className=" bg-white border-8 border-black">
       <thead>
         <tr className="text-lg grid grid-cols-3">
           <th className="py-5 text-red-500">CodeWars</th>

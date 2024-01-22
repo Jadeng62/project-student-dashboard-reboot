@@ -17,7 +17,7 @@ export const Card = ({ student }) => {
       </div>
       <div className="flex flex-col justify-center">
         <Link to={`/student/${student.id}`}>
-          <h3 className="text-2xl underline">
+          <h3 className="text-2xl underline hover:text-red-500">
             {student.names.preferredName} {student.names.middleName}{" "}
             {student.names.surname}
           </h3>

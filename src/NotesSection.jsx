@@ -27,48 +27,60 @@ export const NotesSection = () => {
     setUserInput({ ...userInput, [event.target.id]: event.target.value });
   }
 
-  console.log(commentSection);
-
   return (
     <div>
-      <h2>1:1 Notes</h2>
-      <form className="grid grid-rows-4" onSubmit={handleSubmit}>
-        <label className="px-3" htmlFor="author">
-          Author:
-        </label>
-        <input
-          className=" border border-black px-2 py-1 mb-4 w-1/2"
-          type="text"
-          id="author"
-          name="author"
-          onChange={handleChange}
-          value={userInput.author}
-        />
-        <label className="px-3" htmlFor="comment">
-          Comment:
-        </label>
-        <input
-          className=" border border-black px-2 py-1 mb-4 w-1/2"
-          type="text"
-          id="comment"
-          name="comment"
-          onChange={handleChange}
-          value={userInput.comment}
-        />
-
-        <button
-          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 w-32"
-          type="submit"
+      <div className="h-12 bg-black">
+        <h2 className=" text-white text-xl p-2.5">1-on-1 Notes</h2>
+      </div>
+      <form
+        className=" border-8 border-black grid grid-cols-2 p-4"
+        onSubmit={handleSubmit}
+      >
+        <div className="grid grid-rows-4 text-xl">
+          <label className="px-3" htmlFor="author">
+            Author:
+          </label>
+          <input
+            className=" border border-black px-2 py-1 mb-4 w-4/5"
+            type="text"
+            id="author"
+            name="author"
+            onChange={handleChange}
+            value={userInput.author}
+          />
+          <label className="px-3" htmlFor="comment">
+            Comment:
+          </label>
+          <input
+            className=" border border-black px-2 py-1 mb-4 w-4/5"
+            type="text"
+            id="comment"
+            name="comment"
+            onChange={handleChange}
+            value={userInput.comment}
+          />
+          <button
+            className="bg-black text-white px-2 py-2 w-4/5 rounded hover:bg-blue-700"
+            type="submit"
+          >
+            Submit
+          </button>
+        </div>
+        <div
+          className="
+          text-lg text-center border-8 border-black"
         >
-          Submit
-        </button>
+          <h2 className="text-xl bg-black text-white h-12 p-2.5">
+            Comment Section
+          </h2>
+          {toggleSubmit &&
+            commentSection.map((note, index) => (
+              <div className="border-b-2 border-black p-1.5" key={index}>
+                {note.author} says: {note.comment}
+              </div>
+            ))}
+        </div>
       </form>
-      {toggleSubmit &&
-        commentSection.map((note, index) => (
-          <div key={index}>
-            {note.author} says: {note.comment}
-          </div>
-        ))}
     </div>
   );
 };
