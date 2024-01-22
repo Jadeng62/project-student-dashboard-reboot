@@ -14,7 +14,7 @@ function App() {
   const [allStudents, setAllStudents] = useState([]);
   const [selectStudents, setSelectStudents] = useState([]);
   const [asideInvisible, setAsideInvisible] = useState(false);
-  const [selectedSemester, setSelectedSemester] = useState("All Cohorts")
+  const [selectedSemester, setSelectedSemester] = useState("All Cohorts");
 
   const navigate = useNavigate();
 
@@ -30,25 +30,24 @@ function App() {
   }, []);
 
   const displayStudentTerm = (code) => {
-    navigate("/")
+    navigate("/");
 
-   if (code === "All Cohorts" ) {
-    setSelectStudents(allStudents)
-    setSelectedSemester("All Cohorts")
-   } else {
-    const studentTerms = allStudents.filter(
-      (student) => student.cohort.cohortCode === code
-    );
-    setSelectStudents(studentTerms);
-    setSelectedSemester(code)
-   }
+    if (code === "All Cohorts") {
+      setSelectStudents(allStudents);
+      setSelectedSemester("All Cohorts");
+    } else {
+      const studentTerms = allStudents.filter(
+        (student) => student.cohort.cohortCode === code
+      );
+      setSelectStudents(studentTerms);
+      setSelectedSemester(code);
+      console.log("This is each cohort", code);
+    }
   };
 
   const handleVisibility = () => {
     setAsideInvisible(!asideInvisible);
   };
-
-  
 
   return (
     <div>
@@ -66,7 +65,10 @@ function App() {
           element={
             <>
               {" "}
-              <CardListing selectStudents={selectStudents} selectedSemester={selectedSemester} />{" "}
+              <CardListing
+                selectStudents={selectStudents}
+                selectedSemester={selectedSemester}
+              />{" "}
               {/* <Aside displayStudentTerm={displayStudentTerm} />{" "} */}
             </>
           }
