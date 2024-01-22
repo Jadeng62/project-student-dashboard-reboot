@@ -14,7 +14,7 @@ function App() {
   const [allStudents, setAllStudents] = useState([]);
   const [selectStudents, setSelectStudents] = useState([]);
   const [asideInvisible, setAsideInvisible] = useState(false);
-  const [selectedSemester, setSelectedSemester] = useState("All Cohorts")
+  const [selectedSemester, setSelectedSemester] = useState("All Cohorts");
 
   const navigate = useNavigate();
 
@@ -30,25 +30,23 @@ function App() {
   }, []);
 
   const displayStudentTerm = (code) => {
-    navigate("/")
+    navigate("/");
 
-   if (code === "All Cohorts" ) {
-    setSelectStudents(allStudents)
-    setSelectedSemester("All Cohorts")
-   } else {
-    const studentTerms = allStudents.filter(
-      (student) => student.cohort.cohortCode === code
-    );
-    setSelectStudents(studentTerms);
-    setSelectedSemester(code)
-   }
+    if (code === "All Cohorts") {
+      setSelectStudents(allStudents);
+      setSelectedSemester("All Cohorts");
+    } else {
+      const studentTerms = allStudents.filter(
+        (student) => student.cohort.cohortCode === code
+      );
+      setSelectStudents(studentTerms);
+      setSelectedSemester(code);
+    }
   };
 
   const handleVisibility = () => {
     setAsideInvisible(!asideInvisible);
   };
-
-  
 
   return (
     <div>
@@ -57,35 +55,35 @@ function App() {
         setAsideInvisible={setAsideInvisible}
         handleVisibility={handleVisibility}
       />
-      {!asideInvisible ? (
-        <Aside displayStudentTerm={displayStudentTerm} />
-      ) : null}
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              {" "}
-              <CardListing selectStudents={selectStudents} selectedSemester={selectedSemester} />{" "}
-              {/* <Aside displayStudentTerm={displayStudentTerm} />{" "} */}
-            </>
-          }
-        />
-
-        {/* Make an about.jsx component */}
-        {/* <Route path="/about" element= {<About />}/> */}
-        <Route
-          path="/student/:id"
-          element={
-            <>
-              {" "}
-              <StudentShow students={selectStudents} />{" "}
-              {/* <Aside displayStudentTerm={displayStudentTerm} />{" "} */}
-            </>
-          }
-        />
-        <Route path="/aboutthedevs" element={<AboutTheDevs />} />
-      </Routes>
+      <div className="flex flex-row flex-wrap">
+        {!asideInvisible ? (
+          <Aside displayStudentTerm={displayStudentTerm} />
+        ) : null}
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                {" "}
+                <CardListing
+                  selectStudents={selectStudents}
+                  selectedSemester={selectedSemester}
+                />{" "}
+              </>
+            }
+          />
+          <Route
+            path="/student/:id"
+            element={
+              <>
+                {" "}
+                <StudentShow students={selectStudents} />{" "}
+              </>
+            }
+          />
+          <Route path="/aboutthedevs" element={<AboutTheDevs />} />
+        </Routes>
+      </div>
       <Footer />
     </div>
   );
