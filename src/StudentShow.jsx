@@ -6,7 +6,21 @@ import { NotesSection } from "./NotesSection";
 
 export const StudentShow = ({ students }) => {
   const { id } = useParams();
-  const selectedStudent = students.find((student) => student.id === id);
+  const [track, setTrack] = useState(false);
+  const [selectedStudent, setSelectedStudent] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const studentData = students.find((student) => student.id === id);
+
+      if (studentData) {
+        setSelectedStudent(studentData);
+        setTrack(graduationTrack(studentData));
+      }
+    };
+
+    fetchData();
+  }, [id, students]);
 
   if (!selectedStudent) {
     return <div>Student not found</div>;
@@ -34,10 +48,12 @@ export const StudentShow = ({ students }) => {
           </h3>
         </div>
         {/* Have to come back and use track here */}
-        <div>
-          <h3 className="text-green-500 font-bold text-lg text-right pr-10">
-            PlaceHolder for Grad
-          </h3>
+        <div className="text-right">
+          {track && (
+            <span className="text-green-500 font-bold text-lg text-right pr-10">
+              On track to graduate
+            </span>
+          )}
         </div>
       </div>
 
