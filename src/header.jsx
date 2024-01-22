@@ -10,7 +10,7 @@ export const Header = ({
   handleVisibility,
 }) => {
   return (
-    <div className=" pt-6">
+    <div className="mx-6 pt-6">
       <div className="flex flex-row p-5 rounded-tl-xl rounded-tr-xl bg-red-500">
         <Link to="/">
           <h1 className=" text-5xl font-semibold text-white">

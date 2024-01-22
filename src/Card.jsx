@@ -13,7 +13,11 @@ export const Card = ({ student }) => {
   return (
     <div className="student-card grid grid-cols-3 ">
       <div>
-        <img src={student.profilePhoto} alt="" />
+        <img
+          src={student.profilePhoto}
+          alt="profile photo"
+          className="rounded-full object-center object-cover h-65 w-65"
+        />
       </div>
       <div className="flex flex-col justify-center">
         <Link to={`/student/${student.id}`}>
