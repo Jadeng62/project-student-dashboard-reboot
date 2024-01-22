@@ -11,23 +11,29 @@ export const Card = ({ student }) => {
   }, [student]);
 
   return (
-    <div className="student-card">
+    <div className="student-card grid grid-cols-3 ">
       <div>
         <img src={student.profilePhoto} alt="" />
       </div>
-      <div>
+      <div className="flex flex-col justify-center">
         <Link to={`/student/${student.id}`}>
-          <h3>
+          <h3 className="text-2xl underline">
             {student.names.preferredName} {student.names.middleName}{" "}
             {student.names.surname}
           </h3>
         </Link>
-        <p>{student.username}</p>
-        <p>
-          <span>Birthday: </span>
+        <p className="text-lg">{student.username}</p>
+        <p className="text-lg">
+          <span className="text-red-500 font-bold">Birthday: </span>
           {birthdayFormat(student)}
         </p>
-        {track && <span>On track to graduate</span>}
+      </div>
+      <div className="flex justify-end">
+        {track && (
+          <span className="text-green-500 font-bold text-lg text-right ml-auto p-4">
+            On track to graduate
+          </span>
+        )}
       </div>
     </div>
   );

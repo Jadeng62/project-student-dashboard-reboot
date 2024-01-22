@@ -37,7 +37,7 @@ export const NotesSection = () => {
           Author:
         </label>
         <input
-          className=" border border-black px-2 py-1 mb-4 w-1/4"
+          className=" border border-black px-2 py-1 mb-4 w-1/2"
           type="text"
           id="author"
           name="author"
@@ -48,7 +48,7 @@ export const NotesSection = () => {
           Comment:
         </label>
         <input
-          className=" border border-black px-2 py-1 mb-4 w-1/4"
+          className=" border border-black px-2 py-1 mb-4 w-1/2"
           type="text"
           id="comment"
           name="comment"

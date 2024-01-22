@@ -7,11 +7,17 @@ const URL = "http://localhost:5001/api/students";
 export const CardListing = ({ selectStudents }) => {
   return (
     <div>
-      <h2>All Cohorts</h2>
-      <h2>Total Fellows: {selectStudents.length} Fellows</h2>
-      {selectStudents.map((student) => {
-        return <Card key={student.id} student={student} />;
-      })}
+      <h2 className="text-3xl">All Cohorts</h2>
+      <h2 className="text-3xl">
+        Total Fellows:{" "}
+        <span className="text-red-500 font-bold">{selectStudents.length}</span>{" "}
+        Fellows
+      </h2>
+      <div className="grid grid-cols-1">
+        {selectStudents.map((student) => {
+          return <Card key={student.id} student={student} />;
+        })}
+      </div>
     </div>
   );
 };
