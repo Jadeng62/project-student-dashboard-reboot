@@ -7,15 +7,24 @@ import { NotesSection } from "./NotesSection";
 export const StudentShow = ({ students }) => {
   const { id } = useParams();
   const [track, setTrack] = useState(false);
-  const selectedStudent = students.find((student) => student.id === id);
+  const [selectedStudent, setSelectedStudent] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const studentData = students.find((student) => student.id === id);
+
+      if (studentData) {
+        setSelectedStudent(studentData);
+        setTrack(graduationTrack(studentData));
+      }
+    };
+
+    fetchData();
+  }, [id, students]);
 
   if (!selectedStudent) {
     return <div>Student not found</div>;
   }
-
-  useEffect(() => {
-    setTrack(graduationTrack(selectedStudent));
-  }, [selectedStudent]);
 
   return (
     <div className="max-w-4xl grid auto-rows-auto border-4 border-black">
@@ -41,7 +50,7 @@ export const StudentShow = ({ students }) => {
         {/* Have to come back and use track here */}
         <div className="text-right">
           {track && (
-            <span className="text-green-500 font-bold text-lg pr-10">
+            <span className="text-green-500 font-bold text-lg text-right pr-10">
               On track to graduate
             </span>
           )}

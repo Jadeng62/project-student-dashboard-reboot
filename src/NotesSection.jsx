@@ -36,7 +36,7 @@ export const NotesSection = () => {
         className=" border-8 border-black grid grid-cols-2 p-4"
         onSubmit={handleSubmit}
       >
-        <div className="grid grid-rows-4 text-xl">
+        <div className="grid grid-rows-4 text-xl auto-cols-auto">
           <label className="px-3" htmlFor="author">
             Author:
           </label>
