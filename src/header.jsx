@@ -10,10 +10,9 @@ export const Header = ({
   handleVisibility,
 }) => {
   return (
-    <div className=" mx-2 my-2">
-      <div className="flex flex-row p-5 rounded-lg bg-red-500">
+    <div className=" mx-6 pt-6">
+      <div className="flex flex-row p-5 rounded-tl-xl rounded-tr-xl bg-red-500">
         <Link to="/">
-          <img src="" alt="" />
           <h1 className=" text-5xl font-semibold text-white">
             <MdSchool />
             Student Dashboard
@@ -23,19 +22,19 @@ export const Header = ({
           {/* this theme will become a toggle button that will show sun/moon */}
           <button
             type="button"
-            className=" mx-1 mr-6 px-3 py-3 rounded-full bg-black text-white hover:bg-blue-200"
+            className=" mx-1 mr-6 px-3 py-3 rounded-full bg-black text-white  hover:bg-gray-500"
           >
             {/* Light Dark Toggle */}
-            <LuSunMoon />
+            <LuSunMoon className="text-2xl" />
           </button>
           <Link to={`/aboutthedevs`}>
             <button
               type="button"
-              className=" mx-1 px-3 py-3 rounded-full bg-black text-white hover:bg-green-200"
+              className=" mx-1 px-3 py-3 rounded-full bg-black text-white hover:bg-gray-500"
               onClick={handleVisibility}
             >
               {/* About the Devs  */}
-              <RiTeamFill className="" />
+              <RiTeamFill className="text-2xl" />
             </button>
           </Link>
         </span>

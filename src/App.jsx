@@ -1,6 +1,7 @@
 import { Header } from "./Header";
 import { CardListing } from "./CardListing";
 import { Aside } from "./aside";
+import { Footer } from "./footer";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import { StudentShow } from "./StudentShow";
 import { AboutTheDevs } from "./AboutTheDevs";
@@ -85,6 +86,7 @@ function App() {
         />
         <Route path="/aboutthedevs" element={<AboutTheDevs />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
