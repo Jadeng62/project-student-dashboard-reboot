@@ -26,33 +26,27 @@ export const Aside = ({ displayStudentTerm }) => {
     const sortedCodes = Object.keys(cohortCodes).sort();
     if (sortOrder === "descending") {
       sortedCodes.reverse();
-    } 
+    }
 
-    const formattedCodes = sortedCodes.map(code => {
+    const formattedCodes = sortedCodes.map((code) => {
       return code.replace(/([a-zA-Z]+)(\d+)/, "$1 $2");
     });
-    
-    return formattedCodes
-  }
+
+    return formattedCodes;
+  };
 
   const eachSemester = filteredSemester();
-
-  
 
   const handleSortChange = (event) => {
     setSortOrder(event.target.value);
   };
-   
-  
-
- 
 
   // const splitResult = eachSemester.match(/([a-zA-Z]+)(\d+)/);
   //    let season = splitResult[1]
   //     let year = splitResult[2];
 
   return (
-    <div className="space-x-1 text-center  border border-blue-500" >
+    <div className="space-x-1 text-center  border border-blue-500">
       <h1>Semester :</h1>
       <select onChange={handleSortChange}>
         <option>--Please Select--</option>
@@ -66,12 +60,16 @@ export const Aside = ({ displayStudentTerm }) => {
             key={index}
             className="term"
             onClick={() => displayStudentTerm(code)}
-            
           >
             {code}
           </li>
         ))}
-        <button onClick={()=> displayStudentTerm("All Cohorts")} className=" p-3 border border-red-200 ">All Semesters</button>
+        <button
+          onClick={() => displayStudentTerm("All Cohorts")}
+          className=" p-3 border border-red-200 "
+        >
+          All Semesters
+        </button>
       </ul>
     </div>
   );

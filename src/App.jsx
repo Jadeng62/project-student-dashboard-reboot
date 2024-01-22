@@ -56,38 +56,36 @@ function App() {
         setAsideInvisible={setAsideInvisible}
         handleVisibility={handleVisibility}
       />
-      {!asideInvisible ? (
-        <Aside displayStudentTerm={displayStudentTerm} />
-      ) : null}
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              {" "}
-              <CardListing
-                selectStudents={selectStudents}
-                selectedSemester={selectedSemester}
-              />{" "}
-              {/* <Aside displayStudentTerm={displayStudentTerm} />{" "} */}
-            </>
-          }
-        />
+      <div className="flex flex-row flex-wrap">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                {" "}
+                <CardListing
+                  selectStudents={selectStudents}
+                  selectedSemester={selectedSemester}
+                />{" "}
+              </>
+            }
+          />
 
-        {/* Make an about.jsx component */}
-        {/* <Route path="/about" element= {<About />}/> */}
-        <Route
-          path="/student/:id"
-          element={
-            <>
-              {" "}
-              <StudentShow students={selectStudents} />{" "}
-              {/* <Aside displayStudentTerm={displayStudentTerm} />{" "} */}
-            </>
-          }
-        />
-        <Route path="/aboutthedevs" element={<AboutTheDevs />} />
-      </Routes>
+          {/* Make an about.jsx component */}
+          {/* <Route path="/about" element= {<About />}/> */}
+          <Route
+            path="/student/:id"
+            element={
+              <>
+                {" "}
+                <StudentShow students={selectStudents} />{" "}
+              </>
+            }
+          />
+          <Route path="/aboutthedevs" element={<AboutTheDevs />} />
+        </Routes>
+        <Aside displayStudentTerm={displayStudentTerm} className="w-64" />
+      </div>
       <Footer />
     </div>
   );
