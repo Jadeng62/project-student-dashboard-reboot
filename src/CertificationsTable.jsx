@@ -1,6 +1,12 @@
 import React from "react";
 
 export const CertificationsTable = ({ selectedStudent }) => {
+  const percentage = (
+    (selectedStudent.codewars.current.total /
+      selectedStudent.codewars.goal.total) *
+    100
+  ).toFixed(2);
+
   return (
     <table className=" bg-white border-8 border-black">
       <thead>
@@ -25,11 +31,13 @@ export const CertificationsTable = ({ selectedStudent }) => {
               </p>
               <p className="pb-5">
                 Percent of Goal Achieved:{" "}
-                {(
-                  (selectedStudent.codewars.current.total /
-                    selectedStudent.codewars.goal.total) *
-                  100
-                ).toFixed(2)}
+                <span
+                  className={
+                    percentage > 100 ? "text-green-600" : "text-red-500"
+                  }
+                >
+                  {percentage}
+                </span>
                 %
               </p>
             </div>
@@ -37,32 +45,31 @@ export const CertificationsTable = ({ selectedStudent }) => {
           <td className="text-center">
             <div className="px-10">
               <p className="pb-5">
-                Assignments:
-                {selectedStudent.cohort.scores.assignments * 100}%
+                Assignments: {selectedStudent.cohort.scores.assignments * 100}%
               </p>
               <p className="pb-5">
-                Projects:{selectedStudent.cohort.scores.projects * 100}%
+                Projects: {selectedStudent.cohort.scores.projects * 100}%
               </p>
               <p className="pb-5">
-                Assessments:{selectedStudent.cohort.scores.assessments * 100}%
+                Assessments: {selectedStudent.cohort.scores.assessments * 100}%
               </p>
             </div>
           </td>
           <td className="text-center">
             <div className="px-10">
               <p className="pb-5 ">
-                Resume: {selectedStudent.certifications.resume ? "🟢" : "🔴"}
+                Resume: {selectedStudent.certifications.resume ? "✅" : "❌"}
               </p>
               <p className="pb-5 ">
                 LinkedIn:{" "}
-                {selectedStudent.certifications.linkedin ? "🟢" : "🔴"}
+                {selectedStudent.certifications.linkedin ? "✅" : "❌"}
               </p>
               <p className="pb-5 ">
                 Mock Interview:{" "}
-                {selectedStudent.certifications.mockInterview ? "🟢" : "🔴"}
+                {selectedStudent.certifications.mockInterview ? "✅" : "❌"}
               </p>
               <p className="pb-5">
-                Github: {selectedStudent.certifications.github ? "🟢" : "🔴"}
+                Github: {selectedStudent.certifications.github ? "✅" : "❌"}
               </p>
             </div>
           </td>
