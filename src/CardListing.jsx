@@ -15,7 +15,7 @@ export const CardListing = ({ selectStudents, selectedSemester }) => {
         <span className="text-red-500 font-bold">{selectStudents.length}</span>{" "}
         Fellows
       </h2>
-      <div className="grid grid-cols-1">
+      <div className="grid grid-cols-1 overflow-y-auto max-h-[900px]">
         {selectStudents.map((student) => {
           return <Card key={student.id} student={student} />;
         })}
