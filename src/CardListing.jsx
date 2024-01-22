@@ -8,7 +8,7 @@ export const CardListing = ({ selectStudents, selectedSemester }) => {
   console.log("semester:", selectedSemester);
 
   return (
-    <div>
+    <div className="bg-zinc-200 mx-0">
       <h2 className="text-3xl">{selectedSemester}</h2>
       <h2 className="text-3xl">
         Total Fellows:{" "}
