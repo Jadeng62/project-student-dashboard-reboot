@@ -56,33 +56,39 @@ function App() {
         handleVisibility={handleVisibility}
       />
       <div className="flex flex-row flex-wrap">
-        {!asideInvisible ? (
-          <Aside displayStudentTerm={displayStudentTerm} />
-        ) : null}
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                {" "}
-                <CardListing
-                  selectStudents={selectStudents}
-                  selectedSemester={selectedSemester}
-                />{" "}
-              </>
-            }
-          />
-          <Route
-            path="/student/:id"
-            element={
-              <>
-                {" "}
-                <StudentShow students={selectStudents} />{" "}
-              </>
-            }
-          />
-          <Route path="/aboutthedevs" element={<AboutTheDevs />} />
-        </Routes>
+        <div className="w-full lg:w-1/4 p-4">
+          {!asideInvisible ? (
+            <Aside displayStudentTerm={displayStudentTerm} />
+          ) : null}
+        </div>
+        <div className="w-full lg:w-3/4 p-4">
+          {" "}
+          {/* Adjust width and padding as needed */}
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  {" "}
+                  <CardListing
+                    selectStudents={selectStudents}
+                    selectedSemester={selectedSemester}
+                  />{" "}
+                </>
+              }
+            />
+            <Route
+              path="/student/:id"
+              element={
+                <>
+                  {" "}
+                  <StudentShow students={selectStudents} />{" "}
+                </>
+              }
+            />
+            <Route path="/aboutthedevs" element={<AboutTheDevs />} />
+          </Routes>
+        </div>
       </div>
       <Footer />
     </div>
