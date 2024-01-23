@@ -28,7 +28,7 @@ Once you load up the page you will see a list of student cards being displayed. 
 
 ### Filtering Cohorts
 
-Based on the home page you can see how on the top it shows "All Cohorts", "Total Fellows: 250." These are dynamic so they can be manipulated based upon our filtering system.
+Based on the home page you can see how on the top it shows "All Cohorts", "Total Students: 250." These are dynamic so they can be manipulated based upon our filtering system.
 
 \*Insert Cohort Count home page
 
@@ -65,3 +65,9 @@ This project was possible by the contributions of our talented team of developer
 - Jaden Glenn: Team Lead
 - Alexander Gonzalez: Team Member
 - Carlitos Dutan: Team Member
+
+### License
+
+This project is licensed under the [MIT License](https://www.freecodecamp.org/news/how-open-source-licenses-work-and-how-to-add-them-to-your-projects-34310c3cf94/).
+
+Efficiently manage student records with the Student Dashboard App! 📚🔍

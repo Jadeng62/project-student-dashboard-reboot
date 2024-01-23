@@ -11,9 +11,9 @@ export const CardListing = ({ selectStudents, selectedSemester }) => {
     <div className="bg-zinc-200 mx-0">
       <h2 className="text-3xl">{selectedSemester}</h2>
       <h2 className="text-3xl">
-        Total Fellows:{" "}
+        Total Students:{" "}
         <span className="text-red-500 font-bold">{selectStudents.length}</span>{" "}
-        Fellows
+        Students
       </h2>
       <div className="grid grid-cols-1 overflow-y-auto max-h-[900px]">
         {selectStudents.map((student) => {
