@@ -26,51 +26,51 @@ export const Aside = ({ displayStudentTerm }) => {
     const sortedCodes = Object.keys(cohortCodes).sort();
     if (sortOrder === "descending") {
       sortedCodes.reverse();
-    }
+    } 
 
-    const formattedCodes = sortedCodes.map((code) => {
-      return code.replace(/([a-zA-Z]+)(\d+)/, "$1 $2");
-    });
-
-    return formattedCodes;
-  };
+    
+    return sortedCodes.map(code => {
+    
+        const formattedCode = code.replace(/([a-zA-Z]+)(\d+)/, "$1 $2")
+        return { original:code, formatted: formattedCode}
+    })
+  }
 
   const eachSemester = filteredSemester();
+
+  
 
   const handleSortChange = (event) => {
     setSortOrder(event.target.value);
   };
-
-  // const splitResult = eachSemester.match(/([a-zA-Z]+)(\d+)/);
-  //    let season = splitResult[1]
-  //     let year = splitResult[2];
+   
+  
 
   return (
-    <div className="space-x-1 text-center  border border-blue-500 bg-zinc-200 mx-0">
-      <h1>Semester :</h1>
+    <div className="space-x-1 text-center  border border-blue-500 bg-[radial-gradient(ellipse_at_left,_var(--tw-gradient-stops))] from-sky-100 to-sky-600
+     rounded-lg">
+      <h1 className="italic font-bold">Select a Semester :</h1>
       <select onChange={handleSortChange}>
-        <option>--Please Select--</option>
+        <option>-- Select Order--</option>
         <option value="ascending">Ascending-Order</option>
         <option value="descending">Descending-Order</option>
       </select>
       <br />
       <ul>
-        {/* {console.log(eachSemester)} */}
-        {eachSemester.map((code, index) => (
+        {eachSemester.map((codeObj, index) => (
           <li
             key={index}
-            className="term"
-            onClick={() => displayStudentTerm(code)}
+            className="font-family: Roboto, sans-serif text-black underline decoration-solid
+             decoration-0 cursor-wait bg-blend-color-burn
+              bg-gradient-to-bl from-yellow-200 from-red-800 to-blue-500 hover:bg-slate-300 m-1.5
+              text-shadow-default rounded"
+            onClick={() => displayStudentTerm(codeObj.original)}
           >
-            {code}
+            {codeObj.formatted}
+            {console.log("This is the obj:",codeObj)}
           </li>
         ))}
-        <button
-          onClick={() => displayStudentTerm("All Cohorts")}
-          className=" p-3 border border-red-200 "
-        >
-          All Semesters
-        </button>
+        <button onClick={()=> displayStudentTerm("All Cohorts")} className=" p-3 border border-black bg-gradient-to-br from-fuchsia-500 via-red-200 to-orange-400 text-white rounded-lg hover:bg-slate-400">All Semesters</button>
       </ul>
     </div>
   );

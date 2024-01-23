@@ -50,6 +50,7 @@ function App() {
 
   return (
     <div className="bg-gradient-to-br from-fuchsia-500 via-red-600 to-orange-400 max-h-full">
+    <div className=" mx-6 h-screen overflow-auto">
       <Header
         asideInvisible={asideInvisible}
         setAsideInvisible={setAsideInvisible}
