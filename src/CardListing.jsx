@@ -9,12 +9,18 @@ export const CardListing = ({ selectStudents, selectedSemester }) => {
 
   return (
     <div className="bg-zinc-200">
-      <h2 className="text-3xl">{selectedSemester}</h2>
-      <h2 className="text-3xl">
-        Total Fellows:{" "}
-        <span className="text-red-500 font-bold">{selectStudents.length}</span>{" "}
-        Fellows
-      </h2>
+      <div className="flex flex-row items-center">
+        <h2 className="text-3xl pl-8 pt-6 pb-4 flex-grow">
+          {selectedSemester}
+        </h2>
+        <h2 className="text-3xl pl-6 pt-6 pb-4 pr-8">
+          Total Fellows:{" "}
+          <span className="text-red-500 font-bold">
+            {selectStudents.length}
+          </span>{" "}
+          Fellows
+        </h2>
+      </div>
       <div className="grid grid-cols-1 overflow-y-auto max-h-[788px]">
         {selectStudents.map((student) => {
           return <Card key={student.id} student={student} />;
