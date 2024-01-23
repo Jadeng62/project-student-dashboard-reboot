@@ -48,7 +48,7 @@ export const Aside = ({ displayStudentTerm }) => {
 
   return (
     <div className="space-x-1 text-center  border border-blue-500 bg-[radial-gradient(ellipse_at_left,_var(--tw-gradient-stops))] from-sky-100 to-sky-600
-     rounded-lg">
+     rounded-lg mt-20 mr-5">
       <h1 className="italic font-bold">Select a Semester :</h1>
       <select onChange={handleSortChange}>
         <option>-- Select Order--</option>
