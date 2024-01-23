@@ -14,11 +14,11 @@ export const CardListing = ({ selectStudents, selectedSemester }) => {
           {selectedSemester}
         </h2>
         <h2 className="text-3xl pl-6 pt-6 pb-4 pr-8">
-          Total Fellows:{" "}
+          Total Students:{" "}
           <span className="text-red-500 font-bold">
             {selectStudents.length}
           </span>{" "}
-          Fellows
+          Students
         </h2>
       </div>
       <div className="grid grid-cols-1 overflow-y-auto max-h-[788px]">
