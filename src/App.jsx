@@ -49,7 +49,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="bg-gradient-to-br from-fuchsia-500 via-red-600 to-orange-400 max-h-full">
       <Header
         asideInvisible={asideInvisible}
         setAsideInvisible={setAsideInvisible}
