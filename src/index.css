@@ -18,11 +18,11 @@
   right: inherit;
 }
 
-/* styles.css or your custom styles file */
+/* custom gradient ring class for student card images */
 .gradient-ring {
   position: relative;
-  width: 200px; /* Adjust the width based on your design */
-  height: 200px; /* Adjust the height based on your design */
+  width: 200px; /* Adjust the width of gradient ring */
+  height: 200px; /* Adjust the heigh of gradient ring */
   /*used Hawaii gradient from hypercolor.dev*/
   background: linear-gradient(
     to right,
@@ -31,11 +31,34 @@
     #f6e05e,
     #f56565,
     #f56565
-  ); /* Your provided gradient */
+  );
   background-size: 100% 100%;
   background-repeat: initial;
   border-radius: 50%;
   border: 1px solid bg-zinc-100; /* Adjust the border thickness */
+}
+
+/* custom gradient ring class for student show card images */
+.gradient-ring-show-card {
+  position: relative;
+  width: 300px; /* Adjust the width of gradient ring */
+  height: 300px; /* Adjust the heigh of gradient ring */
+  /*used Hawaii gradient from hypercolor.dev*/
+  background: linear-gradient(
+    to right,
+    #48bb78,
+    #8ddc77,
+    #f6e05e,
+    #f56565,
+    #f56565
+  );
+  background-size: 100% 100%;
+  background-repeat: initial;
+  border-radius: 50%;
+  border: 1px solid bg-zinc-100; /* Adjust the border thickness */
+  margin: 0 auto;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
 }
 
 /* Additional styles for image */
@@ -44,8 +67,20 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 94%; /* Ensure the image covers the circular container */
-  height: 94%; /* Ensure the image covers the circular container */
+  width: 94%; /* Adjusts the image width that covers the circular container */
+  height: 94%; /* Adjusts the image height that covers the circular container */
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Additional styles for image */
+.image-overlay-student-show {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 94%; /* Adjusts the image width that covers the circular container */
+  height: 94%; /* Adjusts the image height that covers the circular container */
   object-fit: cover;
   border-radius: 50%;
 }
