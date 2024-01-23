@@ -49,45 +49,48 @@ function App() {
   };
 
   return (
-    <div className="mx-6">
+    <div className="bg-gradient-to-br from-fuchsia-500 via-red-600 to-orange-400 max-h-full">
+    <div className=" mx-6 h-screen overflow-auto">
       <Header
         asideInvisible={asideInvisible}
         setAsideInvisible={setAsideInvisible}
         handleVisibility={handleVisibility}
       />
-      <div className="flex flex-row flex-wrap">
-        <div className="w-full lg:w-1/4 p-4 order-2">
-          {!asideInvisible ? (
-            <Aside displayStudentTerm={displayStudentTerm} />
-          ) : null}
-        </div>
-        <div className="w-full lg:w-3/4 p-4">
-          {" "}
-          {/* Adjust width and padding as needed */}
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <>
-                  {" "}
-                  <CardListing
-                    selectStudents={selectStudents}
-                    selectedSemester={selectedSemester}
-                  />{" "}
-                </>
-              }
-            />
-            <Route
-              path="/student/:id"
-              element={
-                <>
-                  {" "}
-                  <StudentShow students={selectStudents} />{" "}
-                </>
-              }
-            />
-            <Route path="/aboutthedevs" element={<AboutTheDevs />} />
-          </Routes>
+      <div className="mx-6 bg-zinc-200">
+        <div className="flex flex-row flex-wrap">
+          <div className="w-full lg:w-1/3 pl-2 order-2">
+            {!asideInvisible ? (
+              <Aside displayStudentTerm={displayStudentTerm} />
+            ) : null}
+          </div>
+          <div className="w-full lg:w-2/3 pr-2">
+            {" "}
+            {/* Adjust width and padding as needed */}
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <>
+                    {" "}
+                    <CardListing
+                      selectStudents={selectStudents}
+                      selectedSemester={selectedSemester}
+                    />{" "}
+                  </>
+                }
+              />
+              <Route
+                path="/student/:id"
+                element={
+                  <>
+                    {" "}
+                    <StudentShow students={selectStudents} />{" "}
+                  </>
+                }
+              />
+              <Route path="/aboutthedevs" element={<AboutTheDevs />} />
+            </Routes>
+          </div>
         </div>
       </div>
       <Footer />

@@ -27,12 +27,12 @@ export const StudentShow = ({ students }) => {
   }
 
   return (
-    <div className="max-w-4xl grid auto-rows-auto border-4 border-black">
-      <div>
+    <div className="max-w-4xl grid auto-rows-auto border-4 border-black bg-zinc-100">
+      <div className="gradient-ring-show-card">
         <img
-          className="mx-auto p-10"
+          className="image-overlay-student-show"
           src={selectedStudent.profilePhoto}
-          alt=""
+          alt="student photo"
         />
       </div>
       <div className="grid grid-cols-2">
