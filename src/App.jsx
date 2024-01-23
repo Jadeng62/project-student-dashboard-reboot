@@ -49,7 +49,7 @@ function App() {
   };
 
   return (
-    <div className="mx-6">
+    <div className=" mx-6 h-screen overflow-auto">
       <Header
         asideInvisible={asideInvisible}
         setAsideInvisible={setAsideInvisible}
@@ -58,7 +58,7 @@ function App() {
       <div className="flex flex-row flex-wrap">
         <div className="w-full lg:w-1/4 p-4 order-2">
           {!asideInvisible ? (
-            <Aside displayStudentTerm={displayStudentTerm} />
+            <Aside displayStudentTerm={displayStudentTerm} className="sticky top-O"/>
           ) : null}
         </div>
         <div className="w-full lg:w-3/4 p-4">

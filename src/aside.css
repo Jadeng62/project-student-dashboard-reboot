@@ -20,3 +20,7 @@ li:hover {
     background-color: aliceblue;
 }  */
 
+
+.text-shadow-default {
+    text-shadow: 1px 1px 0px #471d1d80;;
+}
