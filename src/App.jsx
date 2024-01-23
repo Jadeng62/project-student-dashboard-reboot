@@ -1,8 +1,8 @@
 import { Header } from "./Header";
 import { CardListing } from "./CardListing";
-import { Aside } from "./aside";
-import { Footer } from "./footer";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Aside } from "./Aside"; // Adjusted import statement
+import { Footer } from "./Footer";
+import { Route, Routes, useNavigate, useLocation } from "react-router-dom";
 import { StudentShow } from "./StudentShow";
 import { AboutTheDevs } from "./AboutTheDevs";
 import { useEffect, useState } from "react";
@@ -23,7 +23,6 @@ function App() {
       .then((res) => res.json())
       .then((data) => {
         setSelectStudents(data);
-
         setAllStudents(data);
       })
       .catch((error) => console.error("Error fetching data:", error));
@@ -50,7 +49,7 @@ function App() {
 
   return (
     <div className="bg-gradient-to-br from-fuchsia-500 via-red-600 to-orange-400 max-h-full overflow-auto">
-      <div className=" mx-6 h-screen ">
+      <div className="mx-6 h-screen ">
         <Header
           asideInvisible={asideInvisible}
           setAsideInvisible={setAsideInvisible}
@@ -58,34 +57,35 @@ function App() {
         />
         <div className="mx-6 bg-zinc-200">
           <div className="flex flex-row flex-wrap">
-            <div className="w-full lg:w-1/3 pl-2 order-2">
-              {!asideInvisible ? (
-                <Aside displayStudentTerm={displayStudentTerm} />
-              ) : null}
-            </div>
-            <div className="w-full lg:w-2/3 pr-2">
-              {" "}
-              {/* Adjust width and padding as needed */}
+            <div className="w-full pr-2">
               <Routes>
                 <Route
                   path="/"
                   element={
-                    <>
-                      {" "}
-                      <CardListing
-                        selectStudents={selectStudents}
-                        selectedSemester={selectedSemester}
-                      />{" "}
-                    </>
+                    <div className="flex flex-row flex-wrap">
+                      <div className="w-full lg:w-3/4 pr-2">
+                        <CardListing
+                          selectStudents={selectStudents}
+                          selectedSemester={selectedSemester}
+                        />
+                      </div>
+                      <div className="w-full lg:w-1/4 pr-2">
+                        <Aside displayStudentTerm={displayStudentTerm} />
+                      </div>
+                    </div>
                   }
                 />
                 <Route
                   path="/student/:id"
                   element={
-                    <>
-                      {" "}
-                      <StudentShow students={selectStudents} />{" "}
-                    </>
+                    <div className="flex flex-row flex-wrap">
+                      <div className="w-full lg:w-2/3 pr-2">
+                        <StudentShow students={selectStudents} />
+                      </div>
+                      <div className="w-full lg:w-1/3 pr-2">
+                        <Aside displayStudentTerm={displayStudentTerm} />
+                      </div>
+                    </div>
                   }
                 />
                 <Route path="/aboutthedevs" element={<AboutTheDevs />} />
