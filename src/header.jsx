@@ -11,9 +11,9 @@ export const Header = ({
 }) => {
   return (
     <div className="mx-6 pt-6 flex-shrink-0">
-      <div className="flex flex-row p-5 rounded-tl-xl rounded-tr-xl bg-red-500">
+      <div className="flex flex-row p-5 rounded-tl-xl rounded-tr-xlbg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-rose-300 to-rose-500">
         <Link to="/">
-          <h1 className=" text-5xl font-semibold text-white">
+          <h1 className=" text-5xl font-semibold text-white text-shadow-m">
             <MdSchool />
             Student Dashboard
           </h1>
