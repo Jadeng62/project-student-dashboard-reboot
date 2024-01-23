@@ -55,7 +55,7 @@ function App() {
         setAsideInvisible={setAsideInvisible}
         handleVisibility={handleVisibility}
       />
-      <div className="mx-6 bg-white">
+      <div className="mx-6 bg-zinc-200">
         <div className="flex flex-row flex-wrap">
           <div className="w-full lg:w-1/3 pl-2 order-2">
             {!asideInvisible ? (
