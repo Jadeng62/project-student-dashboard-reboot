@@ -1,12 +1,12 @@
 import { Header } from "./header";
 import { CardListing } from "./CardListing";
-import { Aside } from "./Aside"; // Adjusted import statement
-import { Footer } from "./Footer";
+import { Aside } from "./aside"; // Adjusted import statement
+import { Footer } from "./footer";
 import { Route, Routes, useNavigate, useLocation } from "react-router-dom";
 import { StudentShow } from "./StudentShow";
 import { AboutTheDevs } from "./AboutTheDevs";
 import { useEffect, useState } from "react";
-import { graduationTrack } from "./data/helper";
+
 
 function App() {
   const URL = "http://localhost:5001/api/students";
