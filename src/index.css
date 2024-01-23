@@ -84,3 +84,8 @@
   object-fit: cover;
   border-radius: 50%;
 }
+
+
+.text-shadow-m {
+  text-shadow: 1px 9px 3px #27151580;;
+}

@@ -7,7 +7,7 @@ const URL = "http://localhost:5001/api/students";
 export const CardListing = ({ selectStudents, selectedSemester }) => {
   return (
     <div className="bg-zinc-200">
-      <div className="flex flex-row items-center">
+      <div className="flex flex-row items-center rounded-xl">
         <h2 className="text-3xl pl-8 pt-6 pb-4 flex-grow">
           {selectedSemester}
         </h2>
