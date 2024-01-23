@@ -36,7 +36,7 @@ export const NotesSection = () => {
         className=" border-8 border-black grid grid-cols-2 p-4"
         onSubmit={handleSubmit}
       >
-        <div className="grid grid-rows-4 text-xl auto-cols-auto">
+        <div className="grid grid-rows-6 text-xl auto-cols-auto">
           <label className="px-3" htmlFor="author">
             Author:
           </label>
@@ -47,38 +47,39 @@ export const NotesSection = () => {
             name="author"
             onChange={handleChange}
             value={userInput.author}
+            required
           />
           <label className="px-3" htmlFor="comment">
             Comment:
           </label>
           <input
-            className=" border border-black px-2 py-1 mb-4 w-4/5"
+            className=" border border-black px-2 py-1 mb-4 w-4/5 row-span-5 align-top"
             type="text"
             id="comment"
             name="comment"
             onChange={handleChange}
             value={userInput.comment}
+            required
           />
           <button
-            className="bg-black text-white px-2 py-2 w-4/5 rounded hover:bg-blue-700"
+            className="bg-black text-white px-2 py-4 w-4/5 row-span-6 mt-auto rounded hover:bg-blue-700"
             type="submit"
           >
             Submit
           </button>
         </div>
-        <div
-          className="
-          text-lg text-center border-8 border-black"
-        >
-          <h2 className="text-xl bg-black text-white h-12 p-2.5">
+        <div className="border-8 border-black">
+          <h2 className="text-xl bg-black text-white h-12 p-2.5 text-center">
             Comment Section
           </h2>
-          {toggleSubmit &&
-            commentSection.map((note, index) => (
-              <div className="border-b-2 border-black p-1.5" key={index}>
-                {note.author} says: {note.comment}
-              </div>
-            ))}
+          <div className="text-lg text-center overflow-y-scroll h-80">
+            {toggleSubmit &&
+              commentSection.map((note, index) => (
+                <div className="border-b-2 border-black p-1.5" key={index}>
+                  {note.author} says: {note.comment}
+                </div>
+              ))}
+          </div>
         </div>
       </form>
     </div>
