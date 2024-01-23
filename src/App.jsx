@@ -1,4 +1,4 @@
-import { Header } from "./Header";
+import { Header } from "./header";
 import { CardListing } from "./CardListing";
 import { Aside } from "./Aside"; // Adjusted import statement
 import { Footer } from "./Footer";
