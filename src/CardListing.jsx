@@ -5,8 +5,6 @@ import { Card } from "./Card";
 const URL = "http://localhost:5001/api/students";
 
 export const CardListing = ({ selectStudents, selectedSemester }) => {
-  console.log("semester:", selectedSemester);
-
   return (
     <div className="bg-zinc-200">
       <div className="flex flex-row items-center rounded-xl">

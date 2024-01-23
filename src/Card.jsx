@@ -33,10 +33,8 @@ export const Card = ({ student }) => {
             <span className="text-red-500 font-bold">Birthday: </span>
             {birthdayFormat(student)}
           </p>
-        </div>
-        <div className="flex justify-end">
           {track && (
-            <span className="text-green-500 font-bold text-lg text-right ml-auto p-4">
+            <span className="text-green-500 font-bold text-lg  ">
               On track to graduate
             </span>
           )}

@@ -19,21 +19,12 @@ export const Header = ({
           </h1>
         </Link>
         <div className="flex flex-auto ml-auto mt-12 mr-14 py-4 pr-1 justify-end pl-10 ">
-          {/* this theme will become a toggle button that will show sun/moon */}
-          <button
-            type="button"
-            className=" mx-1 mr-6 px-3 py-3 w-12 h-12 rounded-full bg-black text-white hover:bg-gray-500"
-          >
-            {/* Light Dark Toggle */}
-            <LuSunMoon className="text-2xl" />
-          </button>
           <Link to={`/aboutthedevs`}>
             <button
               type="button"
               className=" mx-1 px-3 py-3 w-12 h-12 rounded-full bg-black text-white hover:bg-gray-500"
               onClick={handleVisibility}
             >
-              {/* About the Devs  */}
               <RiTeamFill className="text-2xl" />
             </button>
           </Link>

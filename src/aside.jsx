@@ -13,7 +13,6 @@ export const Aside = ({ displayStudentTerm }) => {
       .then((data) => setSemester(data))
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
-  console.log(semester);
 
   const filteredSemester = () => {
     const cohortCodes = {};
@@ -26,25 +25,19 @@ export const Aside = ({ displayStudentTerm }) => {
     const sortedCodes = Object.keys(cohortCodes).sort();
     if (sortOrder === "descending") {
       sortedCodes.reverse();
-    } 
+    }
 
-    
-    return sortedCodes.map(code => {
-    
-        const formattedCode = code.replace(/([a-zA-Z]+)(\d+)/, "$1 $2")
-        return { original:code, formatted: formattedCode}
-    })
-  }
+    return sortedCodes.map((code) => {
+      const formattedCode = code.replace(/([a-zA-Z]+)(\d+)/, "$1 $2");
+      return { original: code, formatted: formattedCode };
+    });
+  };
 
   const eachSemester = filteredSemester();
-
-  
 
   const handleSortChange = (event) => {
     setSortOrder(event.target.value);
   };
-   
-  
 
   return (
     <div className="space-x-1 text-center  border border-blue-500 bg-[radial-gradient(ellipse_at_left,_var(--tw-gradient-stops))] from-sky-100 to-sky-600
@@ -67,10 +60,14 @@ export const Aside = ({ displayStudentTerm }) => {
             onClick={() => displayStudentTerm(codeObj.original)}
           >
             {codeObj.formatted}
-            {console.log("This is the obj:",codeObj)}
           </li>
         ))}
-        <button onClick={()=> displayStudentTerm("All Cohorts")} className=" p-3 border border-black bg-gradient-to-br from-fuchsia-500 via-red-200 to-orange-400 text-white rounded-lg hover:bg-slate-400">All Semesters</button>
+        <button
+          onClick={() => displayStudentTerm("All Cohorts")}
+          className=" p-3 border border-black bg-gradient-to-br from-fuchsia-500 via-red-200 to-orange-400 text-white rounded-lg hover:bg-slate-400"
+        >
+          All Semesters
+        </button>
       </ul>
     </div>
   );
