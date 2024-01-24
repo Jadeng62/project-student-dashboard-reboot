@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./CardListing.css";
 import { Card } from "./Card";
 
-const URL = "http://localhost:5001/api/students";
+// const URL = "http://localhost:5001/api/students";
+const URL = import.meta.env.VITE_BASE_API_URL
 
 export const CardListing = ({ selectStudents, selectedSemester }) => {
   return (

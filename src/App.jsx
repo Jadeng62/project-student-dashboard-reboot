@@ -9,7 +9,9 @@ import { useEffect, useState } from "react";
 
 
 function App() {
-  const URL = "http://localhost:5001/api/students";
+  // const URL = "http://localhost:5001/api/students";
+  const URL = import.meta.env.VITE_BASE_API_URL
+  console.log("This is the URL",URL)
 
   const [allStudents, setAllStudents] = useState([]);
   const [selectStudents, setSelectStudents] = useState([]);

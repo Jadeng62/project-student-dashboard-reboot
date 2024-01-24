@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import "./aside.css";
 
-const URL = "http://localhost:5001/api/students";
+// const URL = "http://localhost:5001/api/students";
+const URL = import.meta.env.VITE_BASE_API_URL
 
 export const Aside = ({ displayStudentTerm }) => {
   const [semester, setSemester] = useState([]);
